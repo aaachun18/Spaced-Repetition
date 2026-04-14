@@ -672,6 +672,160 @@
     padding-top: 24px;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
+
+  /* ==========================================
+     RWD — 手機適配
+     ========================================== */
+  @media (max-width: 580px) {
+    body {
+      padding: 16px 10px;
+      gap: 24px;
+    }
+
+    .slide {
+      width: calc(100vw - 20px);
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+
+    /* 封面 */
+    .slide-cover {
+      padding: 28px 24px 24px;
+    }
+    .cover-badge {
+      font-size: 9px;
+      padding: 4px 12px;
+      margin-bottom: 16px;
+    }
+    .cover-title {
+      font-size: 26px;
+    }
+    .cover-subtitle {
+      font-size: 13px;
+    }
+    .cover-hook {
+      font-size: 13px;
+      padding-left: 14px;
+      line-height: 1.7;
+    }
+    .cover-swipe {
+      margin-top: 12px;
+      font-size: 11px;
+    }
+
+    /* 通用標題 */
+    .s-label {
+      font-size: 9px;
+      margin-bottom: 6px;
+    }
+    .s-title {
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    /* Slide 2 比喻 */
+    .slide-metaphor {
+      padding: 24px 20px 20px;
+    }
+    .f-step {
+      grid-template-columns: 48px 1fr;
+      gap: 10px;
+      padding: 12px 14px;
+    }
+    .f-step-icon {
+      width: 48px;
+      height: 48px;
+    }
+    .f-step-title {
+      font-size: 14px;
+    }
+    .f-step-desc {
+      font-size: 11px;
+    }
+    .f-step-brain {
+      font-size: 9.5px;
+    }
+    .forest-steps {
+      gap: 10px;
+    }
+
+    /* Slide 3 對比 */
+    .slide-contrast {
+      padding: 24px 20px 20px;
+    }
+    .contrast-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .c-card {
+      padding: 16px 14px;
+      border-radius: 10px;
+    }
+    .c-card-icon { font-size: 24px; margin-bottom: 6px; }
+    .c-card h3 { font-size: 13px; margin-bottom: 6px; }
+    .c-card p { font-size: 11px; line-height: 1.55; }
+    .c-tag { font-size: 10px; padding: 4px 8px; margin-top: 8px; }
+    .contrast-summary {
+      margin-top: 10px;
+      padding: 10px 14px;
+      gap: 8px;
+    }
+    .contrast-summary-icon { font-size: 16px; }
+    .contrast-summary p { font-size: 11px; line-height: 1.55; }
+
+    /* Slide 4 迷思 */
+    .slide-myth {
+      padding: 24px 20px 20px;
+    }
+    .myth-cards { gap: 8px; margin-top: 10px; }
+    .m-card { padding: 12px 14px; }
+    .m-card h4 { font-size: 12px; }
+    .m-card p { font-size: 11px; }
+    .m-marker { width: 20px; height: 20px; font-size: 10px; }
+    .m-tag { font-size: 9px; }
+
+    /* Slide 5 概念界線 */
+    .slide-boundary {
+      padding: 24px 20px 20px;
+    }
+    .slide-boundary .s-title { font-size: 18px; }
+    .boundary-intro { font-size: 11px; margin-bottom: 10px; }
+    .b-cards { gap: 8px; }
+    .b-card { padding: 12px 14px; }
+    .b-neq { font-size: 16px; }
+    .b-card-label { font-size: 13px; }
+    .b-card-body { font-size: 11px; }
+    .b-card-metaphor { font-size: 10px; margin-top: 4px; padding-top: 4px; }
+
+    /* Slide 6 時間軸 */
+    .slide-schedule {
+      padding: 24px 20px 20px;
+    }
+    .schedule-desc { font-size: 11px; margin-bottom: 14px; }
+    .tl { padding-left: 28px; }
+    .tl-item {
+      grid-template-columns: 52px 1fr;
+      gap: 8px;
+      padding: 6px 0;
+      margin-bottom: 2px;
+    }
+    .tl-day { font-size: 12px; }
+    .tl-content { font-size: 11.5px; }
+    .tl-gap { font-size: 9px; padding-left: 60px; }
+    .tl-item::before { left: -21px; top: 12px; width: 6px; height: 6px; }
+    .tl::before { left: 8px; }
+    .schedule-note { font-size: 11px; padding: 10px 14px; margin-top: 10px; }
+
+    /* Slide 7 結尾 */
+    .slide-footer {
+      padding: 32px 24px;
+    }
+    .footer-logo { font-size: 22px; }
+    .footer-concept { font-size: 12px; margin-bottom: 24px; }
+    .footer-ref-item { font-size: 10.5px; }
+    .footer-credit { font-size: 10px; padding-top: 16px; }
+  }
 </style>
 </head>
 <body>

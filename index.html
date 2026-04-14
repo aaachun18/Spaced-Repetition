@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>間隔複習 IG 懶人包（家長/教師版）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest-deep: #1a2e1a;
+    --forest-mid: #2d4a2d;
+    --forest-light: #4a7a4a;
+    --forest-pale: #6b9e6b;
+    --path-gold: #d4a843;
+    --path-light: #e8c96a;
+    --earth-brown: #8b6914;
+    --cream: #faf6ee;
+    --cream-dark: #f0e8d4;
+    --warning-red: #c0392b;
+    --warning-bg: #fdf0ef;
+    --myth-blue: #2c3e6b;
+    --myth-bg: #eef1f7;
+    --tip-green: #1e7a3a;
+    --tip-bg: #edf7f0;
+    --text-primary: #2a2a2a;
+    --text-secondary: #555;
+    --text-light: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e0d0;
+    font-family: 'Noto Sans TC', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 32px;
+  }
+
+  .slide-wrapper {
+    position: relative;
+  }
+
+  .slide-number {
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* === EACH SLIDE: 1080x1080 scaled down === */
+  .slide {
+    width: 540px;
+    height: 540px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ==========================================
+     SLIDE 1 — COVER
+     ========================================== */
+  .slide-cover {
+    background: linear-gradient(155deg, #0f1f0f 0%, var(--forest-deep) 30%, var(--forest-mid) 65%, var(--forest-light) 100%);
+    padding: 48px 44px 40px;
+    justify-content: space-between;
+  }
+
+  .slide-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 200px 300px at 15% 85%, rgba(74,122,74,0.3) 0%, transparent 70%),
+      radial-gradient(ellipse 160px 250px at 80% 15%, rgba(74,122,74,0.2) 0%, transparent 70%),
+      radial-gradient(circle 80px at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .slide-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(15,31,15,0.4), transparent);
+    pointer-events: none;
+  }
+
+  .cover-top {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(212,168,67,0.15);
+    border: 1px solid rgba(212,168,67,0.35);
+    color: var(--path-light);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .cover-title {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: 38px;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .cover-title .gold { color: var(--path-gold); }
+
+  .cover-subtitle {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .cover-bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-hook {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.85;
+    border-left: 3px solid var(--path-gold);
+    padding-left: 18px;
+  }
+
+  .cover-hook strong { color: var(--path-gold); }
+
+  .cover-swipe {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 2px;
+  }
+
+  /* ==========================================
+     SLIDE 2 — FOREST PATH METAPHOR
+     ========================================== */
+  .slide-metaphor {
+    background: var(--cream);
+    padding: 40px 36px 32px;
+    justify-content: flex-start;
+  }
+
+  .s-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--forest-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .s-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .forest-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .f-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(0,0,0,0.05);
+    align-items: center;
+  }
+
+  .f-step-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .f-step-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 11px;
+    color: var(--forest-light);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .f-step-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin: 2px 0;
+  }
+
+  .f-step-desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .f-step-brain {
+    font-size: 10.5px;
+    color: var(--forest-light);
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+
+
+  /* ==========================================
+     SLIDE 3 — CRAMMING vs SPACED
+     ========================================== */
+  .slide-contrast {
+    background: var(--cream);
+    padding: 36px 36px 32px;
+    justify-content: center;
+  }
+
+  .contrast-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .c-card {
+    border-radius: 14px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c-wrong {
+    background: #fff;
+    border: 1px solid rgba(192,57,43,0.12);
+    border-top: 4px solid var(--warning-red);
+  }
+
+  .c-right {
+    background: #fff;
+    border: 1px solid rgba(30,122,58,0.12);
+    border-top: 4px solid var(--tip-green);
+  }
+
+  .c-card-icon { font-size: 32px; margin-bottom: 10px; }
+
+  .c-card h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .c-wrong h3 { color: var(--warning-red); }
+  .c-right h3 { color: var(--tip-green); }
+
+  .c-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .c-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+
+  .c-wrong .c-tag { background: var(--warning-bg); color: var(--warning-red); }
+  .c-right .c-tag { background: var(--tip-bg); color: var(--tip-green); }
+
+  .contrast-summary {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .contrast-summary-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .contrast-summary p {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .contrast-summary strong { color: var(--forest-deep); }
+
+  /* ==========================================
+     SLIDE 4 — MYTH BUSTING
+     ========================================== */
+  .slide-myth {
+    background: var(--cream);
+    padding: 30px 32px 24px;
+    justify-content: flex-start;
+  }
+
+  .myth-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .m-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .m-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+
+  .m-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .m-false .m-marker { background: var(--warning-bg); color: var(--warning-red); }
+  .m-true .m-marker { background: var(--tip-bg); color: var(--tip-green); }
+
+  .m-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+
+  .m-false .m-tag { color: var(--warning-red); }
+  .m-true .m-tag { color: var(--tip-green); }
+
+  .m-card h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .m-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .m-card p strong { color: var(--text-primary); }
+
+  /* ==========================================
+     SLIDE 5 — CONCEPT BOUNDARY (ENHANCED)
+     ========================================== */
+  .slide-boundary {
+    background: linear-gradient(170deg, #1e3354 0%, var(--myth-blue) 40%, #3a5280 100%);
+    padding: 30px 32px 24px;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .slide-boundary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 180px 260px at 85% 80%, rgba(58,82,128,0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 120px 180px at 10% 20%, rgba(58,82,128,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .slide-boundary .s-label {
+    color: rgba(255,255,255,0.45);
+  }
+
+  .slide-boundary .s-title {
+    color: #fff;
+    font-size: 21px;
+    margin-bottom: 4px;
+  }
+
+  .boundary-intro {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .b-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .b-card {
+    background: rgba(255,255,255,0.09);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+
+  .b-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+
+  .b-neq {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--path-gold);
+    line-height: 1;
+  }
+
+  .b-card-label {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .b-card-body {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+
+  .b-card-body strong {
+    color: var(--path-light);
+  }
+
+  .b-card-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .b-card-metaphor {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ==========================================
+     SLIDE 6 — SCHEDULE
+     ========================================== */
+  .slide-schedule {
+    background: var(--cream);
+    padding: 40px 36px 32px;
+    justify-content: flex-start;
+  }
+
+  .schedule-desc {
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .tl {
+    position: relative;
+    padding-left: 32px;
+    flex: 1;
+  }
+
+  .tl::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--path-gold), var(--forest-light));
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 6px;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 8px 0;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 14px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--path-gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--path-gold);
+  }
+
+  .tl-day {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--forest-deep);
+  }
+
+  .tl-content {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .tl-content strong { color: var(--text-primary); }
+
+  .tl-gap {
+    font-size: 10px;
+    color: var(--path-gold);
+    font-weight: 600;
+    padding-left: 76px;
+    margin: -2px 0;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  .schedule-note {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--tip-bg);
+    border-radius: 10px;
+    border-left: 3px solid var(--tip-green);
+    font-size: 12px;
+    color: var(--tip-green);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* ==========================================
+     SLIDE 7 — FOOTER / REFERENCES
+     ========================================== */
+  .slide-footer {
+    background: linear-gradient(155deg, #0f1f0f 0%, var(--forest-deep) 50%, var(--forest-mid) 100%);
+    padding: 48px 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .slide-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle 200px at 50% 50%, rgba(212,168,67,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--path-gold);
+    margin-bottom: 8px;
+  }
+
+  .footer-concept {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    margin-bottom: 36px;
+  }
+
+  .footer-refs {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
+
+  .footer-refs-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 12px;
+  }
+
+  .footer-ref-item {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .footer-ref-item::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--path-gold);
+  }
+
+  .footer-credit {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.7;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== SLIDE 1: COVER ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">1 / 7</div>
+  <div class="slide slide-cover">
+    <div class="cover-top">
+      <div class="cover-badge">家長／教師版 ◆ 學習科學懶人包</div>
+      <h1 class="cover-title">
+        間隔複習<br>
+        <span class="gold">在草長回來之前<br>再走一次那條路</span>
+      </h1>
+      <div class="cover-subtitle">Spaced Repetition — 森林小路比喻</div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-hook">
+        孩子不是「不認真」，是複習的<strong>時機與節奏</strong>出了問題。<br>
+        記憶不是「裝進去就好」，而是要在<strong>快遺忘時再次提取</strong>。
+      </div>
+      <div class="cover-swipe">← 向左滑動閱讀 →</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 2: METAPHOR ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">2 / 7</div>
+  <div class="slide slide-metaphor">
+    <div class="s-label">核心比喻</div>
+    <div class="s-title">🌲 記憶像在森林裡踩出一條路</div>
+    <div class="forest-steps">
+      <div class="f-step">
+        <svg class="f-step-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#edf7f0"/>
+          <line x1="12" y1="48" x2="10" y2="26" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+          <line x1="20" y1="48" x2="18" y2="22" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+          <line x1="28" y1="48" x2="30" y2="24" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".6"/>
+          <line x1="36" y1="48" x2="34" y2="20" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".9"/>
+          <line x1="44" y1="48" x2="46" y2="26" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+          <line x1="52" y1="48" x2="50" y2="22" stroke="#4a7a4a" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+          <ellipse cx="32" cy="44" rx="5" ry="2.5" fill="#d4a843" opacity=".5"/>
+          <rect x="6" y="48" width="52" height="4" rx="2" fill="#8b6914" opacity=".25"/>
+        </svg>
+        <div>
+          <div class="f-step-num">STEP 1</div>
+          <div class="f-step-title">初次學習</div>
+          <div class="f-step-desc">第一次走過森林，只踩倒一些草，路徑非常模糊</div>
+          <div class="f-step-brain">🧠 新的突觸連結剛形成，非常脆弱</div>
+        </div>
+      </div>
+      <div class="f-step">
+        <svg class="f-step-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#edf7f0"/>
+          <line x1="10" y1="48" x2="9" y2="34" stroke="#4a7a4a" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+          <line x1="18" y1="48" x2="17" y2="32" stroke="#4a7a4a" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+          <line x1="46" y1="48" x2="47" y2="34" stroke="#4a7a4a" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+          <line x1="54" y1="48" x2="53" y2="32" stroke="#4a7a4a" stroke-width="2" stroke-linecap="round" opacity=".3"/>
+          <rect x="24" y="36" width="16" height="16" rx="3" fill="#d4a843" opacity=".25"/>
+          <ellipse cx="32" cy="40" rx="5" ry="2.5" fill="#d4a843" opacity=".55"/>
+          <ellipse cx="32" cy="33" rx="4" ry="2" fill="#d4a843" opacity=".35"/>
+          <rect x="6" y="48" width="52" height="4" rx="2" fill="#8b6914" opacity=".25"/>
+        </svg>
+        <div>
+          <div class="f-step-num">STEP 2</div>
+          <div class="f-step-title">間隔後再走</div>
+          <div class="f-step-desc">草快長回來、但還沒蓋住路時回來，路徑更清晰</div>
+          <div class="f-step-brain">🧠 遺忘臨界點重新提取，突觸顯著增強</div>
+        </div>
+      </div>
+      <div class="f-step">
+        <svg class="f-step-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="12" fill="#edf7f0"/>
+          <rect x="20" y="16" width="24" height="36" rx="4" fill="#d4a843" opacity=".2"/>
+          <rect x="24" y="18" width="16" height="32" rx="3" fill="#d4a843" opacity=".35"/>
+          <line x1="10" y1="48" x2="11" y2="40" stroke="#4a7a4a" stroke-width="1.5" stroke-linecap="round" opacity=".25"/>
+          <line x1="54" y1="48" x2="53" y2="40" stroke="#4a7a4a" stroke-width="1.5" stroke-linecap="round" opacity=".25"/>
+          <ellipse cx="32" cy="24" rx="4" ry="2" fill="#8b6914" opacity=".35"/>
+          <ellipse cx="32" cy="32" rx="4" ry="2" fill="#8b6914" opacity=".45"/>
+          <ellipse cx="32" cy="40" rx="4" ry="2" fill="#8b6914" opacity=".55"/>
+          <rect x="6" y="48" width="52" height="4" rx="2" fill="#8b6914" opacity=".25"/>
+        </svg>
+        <div>
+          <div class="f-step-num">STEP 3</div>
+          <div class="f-step-title">路越來越寬</div>
+          <div class="f-step-desc">多次踩踏後路成大道，回來頻率可以降低了</div>
+          <div class="f-step-brain">🧠 記憶進入長期儲存，間隔可遞增</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== SLIDE 3: CONTRAST ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">3 / 7</div>
+  <div class="slide slide-contrast">
+    <div class="s-label">學習方式比較</div>
+    <div class="s-title">臨時抱佛腳 vs 間隔複習</div>
+    <div class="contrast-grid">
+      <div class="c-card c-wrong">
+        <div class="c-card-icon">🚫</div>
+        <h3>集中複習</h3>
+        <p>考前一天在同一條路上來回走一百次，當天路看起來很清楚。<br><br>但你之後再也不來，幾週後草完全長回來，路徑消失。</p>
+        <span class="c-tag">短期有感，長期歸零</span>
+      </div>
+      <div class="c-card c-right">
+        <div class="c-card-icon">✅</div>
+        <h3>間隔複習</h3>
+        <p>隔一天回來走一次，再隔三天走一次，再隔一週走一次……<br><br>每次回來路都還在，而且越來越寬。</p>
+        <span class="c-tag">每次費力但累積紮實</span>
+      </div>
+    </div>
+    <div class="contrast-summary">
+      <div class="contrast-summary-icon">💡</div>
+      <p><strong>家長提醒：</strong>如果孩子考前三天才開始讀書且成績不差，那是「短期記憶的假象」。一個月後再問同樣的內容，通常已經忘光。間隔複習看似慢，但留下來的才是真的。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 4: MYTH BUSTING ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">4 / 7</div>
+  <div class="slide slide-myth">
+    <div class="s-label">常見迷思破解</div>
+    <div class="s-title">⚠️ 家長最常見的兩大誤解</div>
+    <div class="myth-cards">
+      <div class="m-card m-false">
+        <div class="m-card-header">
+          <div class="m-marker">✗</div>
+          <div class="m-tag">迷思一</div>
+        </div>
+        <h4>「間隔複習＝叫孩子偶爾翻一下課本」</h4>
+        <p>核心不只是「隔一段時間再看」，而是<strong>主動提取</strong>。只是重看筆記就像「走在柏油路上」——沒有用力踩踏，草不會被壓平。必須<strong>闔上書本、嘗試回想</strong>，才算踩路。</p>
+      </div>
+      <div class="m-card m-false">
+        <div class="m-card-header">
+          <div class="m-marker">✗</div>
+          <div class="m-tag">迷思二</div>
+        </div>
+        <h4>「回想不出來，表示根本沒學會」</h4>
+        <p>回想費力（desirable difficulty）反而是好事——正是因為「草快長回來了」，重新踩下去才最有效。<strong>費力＝有效</strong>，這是最反直覺的地方。</p>
+      </div>
+      <div class="m-card m-true">
+        <div class="m-card-header">
+          <div class="m-marker">✓</div>
+          <div class="m-tag">正確理解</div>
+        </div>
+        <h4>間隔複習 ＝ 在快遺忘時主動提取，刻意讓大腦出力</h4>
+        <p>請鼓勵孩子：<strong>「想不起來很正常，想的過程就是在學。」</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 5: CONCEPT BOUNDARY (ENHANCED) ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">5 / 7</div>
+  <div class="slide slide-boundary">
+    <div class="s-label">概念界線</div>
+    <div class="s-title">🔍 間隔複習不等於……</div>
+    <div class="boundary-intro">
+      以下四個概念經常被混淆。釐清界線，才能正確使用間隔複習。
+    </div>
+    <div class="b-cards">
+
+      <div class="b-card" style="display:block;">
+        <div class="b-card-header">
+          <div class="b-neq">≠</div>
+          <div class="b-card-label">「不用練熟」</div>
+        </div>
+        <div class="b-card-body">
+          首次學習仍需<strong>理解透徹</strong>。間隔複習是「鞏固」手段，不能跳過理解階段。就像你至少要先走過那條路一次，才有東西可以回來踩。
+        </div>
+        <div class="b-card-metaphor">
+          🌲 沒走過的森林連路都沒有，無從「回來」——需先建立基本組塊（Chunk）
+        </div>
+      </div>
+
+      <div class="b-card" style="display:block;">
+        <div class="b-card-header">
+          <div class="b-neq">≠</div>
+          <div class="b-card-label">交錯練習（Interleaving）</div>
+        </div>
+        <div class="b-card-body">
+          <strong>交錯練習</strong>是混合不同題型交替練習，訓練「辨認該用哪條路」。間隔複習是拉長<strong>同一內容</strong>的複習間距。兩者互補但機制不同。
+        </div>
+        <div class="b-card-metaphor">
+          🌲 交錯＝練習在多條路之間切換；間隔＝讓同一條路的雜草有時間長回來再踩
+        </div>
+      </div>
+
+      <div class="b-card" style="display:block;">
+        <div class="b-card-header">
+          <div class="b-neq">≠</div>
+          <div class="b-card-label">「少量多餐就好」</div>
+        </div>
+        <div class="b-card-body">
+          關鍵不是把時間切碎。如果每次都只是<strong>被動重讀</strong>，切再碎也沒用。必須每次都進行<strong>主動提取</strong>——闔上書回想、自我測驗。
+        </div>
+        <div class="b-card-metaphor">
+          🌲 用眼睛看路 ≠ 用腳踩路，只有踩才能壓平草
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 6: SCHEDULE ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">6 / 7</div>
+  <div class="slide slide-schedule">
+    <div class="s-label">教學應用</div>
+    <div class="s-title">📅 可直接使用的複習節奏</div>
+    <div class="schedule-desc">以「一個新單元」為例，根據遺忘曲線設計的間隔遞增時間表</div>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-day">Day 1</div>
+        <div class="tl-content"><strong>首次學習</strong>——上課、閱讀、理解概念</div>
+      </div>
+      <div class="tl-gap">── 間隔 1 天 ──</div>
+      <div class="tl-item">
+        <div class="tl-day">Day 2</div>
+        <div class="tl-content"><strong>第一次提取</strong>——闔上課本，嘗試回想重點</div>
+      </div>
+      <div class="tl-gap">── 間隔 3 天 ──</div>
+      <div class="tl-item">
+        <div class="tl-day">Day 5</div>
+        <div class="tl-content"><strong>第二次提取</strong>——小測驗、字卡或口頭問答</div>
+      </div>
+      <div class="tl-gap">── 間隔 7 天 ──</div>
+      <div class="tl-item">
+        <div class="tl-day">Day 12</div>
+        <div class="tl-content"><strong>第三次提取</strong>——教別人、或與其他概念連結</div>
+      </div>
+      <div class="tl-gap">── 間隔 14 天以上 ──</div>
+      <div class="tl-item">
+        <div class="tl-day">Day 26+</div>
+        <div class="tl-content"><strong>鞏固檢驗</strong>——月考前不需臨時抱佛腳</div>
+      </div>
+    </div>
+
+    <div class="schedule-note">
+      ✅ 提醒：每次「提取」都要闔上書本主動回想，不是重讀！感到費力是正常的，費力才有效。
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 7: FOOTER ========== -->
+<div class="slide-wrapper">
+  <div class="slide-number">7 / 7</div>
+  <div class="slide slide-footer">
+    <div class="footer-content">
+      <div class="footer-logo">間隔複習</div>
+      <div class="footer-concept">SPACED REPETITION</div>
+      <div class="footer-refs">
+        <div class="footer-refs-title">參考文獻</div>
+        <div class="footer-ref-item">Ebbinghaus (1885) 遺忘曲線</div>
+        <div class="footer-ref-item">Cepeda et al. (2006) 間隔效應後設分析</div>
+        <div class="footer-ref-item">Bjork & Bjork (1992) 合意困難理論</div>
+        <div class="footer-ref-item">Barbara Oakley《大腦喜歡這樣學》</div>
+        <div class="footer-ref-item">Karpicke & Roediger (2008) 提取練習研究</div>
+      </div>
+      <div class="footer-credit">
+        家長／教師版 ◆ 學習科學懶人包<br>
+        AI 輔助生成 ＋ 人工審校修訂 ◆ 僅供教學用途
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
